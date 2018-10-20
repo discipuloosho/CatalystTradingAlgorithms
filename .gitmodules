@@ -1,0 +1,9 @@
+[submodule "rising_block"]
+	path = rising_block
+	url = https://github.com/mrechung/rising_block.git
+[submodule "catalyst-RSI-strategy"]
+	path = catalyst-RSI-strategy
+	url = https://github.com/jonasbostoen/catalyst-RSI-strategy.git
+[submodule "catalyst"]
+	path = catalyst
+	url = https://github.com/enigmampc/catalyst.git
