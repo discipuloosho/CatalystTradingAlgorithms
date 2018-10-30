@@ -21,4 +21,4 @@ def assetsCalc(tradeParams):
 
 if __name__ == '__main__':
     tradeParams = userInput()
-    print(f'Total de activos: {int(assetsCalc(tradeParams))}')
+    print(f'Activos que operar: {int(assetsCalc(tradeParams))}')
