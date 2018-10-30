@@ -9,6 +9,7 @@ def userInput():
             stopLossPrice = float(input("Stop Loss: "))
             break
         except ValueError:
+            print("Introduce números nada más\n")
             pass
     tradeParams = [totalCapital, percentageToRisk, entryPrice, stopLossPrice]
     return tradeParams
