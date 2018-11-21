@@ -15,10 +15,13 @@ def userInput():
     return tradeParams
 
 def assetsCalc(tradeParams):
-    capitalToRisk = tradeParams[0] * (tradeParams[1]/100)
+    bitfinexTakerFee = 0.2 / 100.0
+    capitalToRisk = (tradeParams[0] * (tradeParams[1]/100))
     lostByAssetUntilStopLoss = abs(tradeParams[2] - tradeParams[3])
-    assetsToBuy = capitalToRisk / lostByAssetUntilStopLoss
-    return assetsToBuy
+    assetsToDeal = capitalToRisk / lostByAssetUntilStopLoss
+    capitalToRisk -= ((assetsToDeal * tradeParams[2] * bitfinexTakerFee) + (assetsToDeal * tradeParams[3] * bitfinexTakerFee))
+    assetsToDeal = capitalToRisk / lostByAssetUntilStopLoss
+    return assetsToDeal
 
 if __name__ == '__main__':
     tradeParams = userInput()
